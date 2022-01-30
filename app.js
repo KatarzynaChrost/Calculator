@@ -22,6 +22,9 @@ numberButtons.forEach(numberButton => {
 
 operationButtons.forEach(operationButton => {
   operationButton.addEventListener("click", () => {
+    if (!currentOperandTextElement.innerText && !previousOperandTextElement.innerText)
+    return
+
     if (!currentOperandTextElement.innerText) {
       previousOperandTextElement.innerText = previousOperandTextElement.innerText.substring(0, previousOperandTextElement.innerText.length-1) + operationButton.innerText
     }
